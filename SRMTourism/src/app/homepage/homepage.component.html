@@ -1,0 +1,22 @@
+<div class="homepage-container">
+    <div class="sidebar">
+      <a routerLink="/about" class="sidebar-button">About Us</a>
+      <a routerLink="/contact" class="sidebar-button">Contact Us</a>
+      <a routerLink="/register" class="sidebar-button">Register</a>
+      <div class="login-dropdown">
+        <button (click)="toggleDropdown()">Login</button>
+        <div *ngIf="showDropdown" class="dropdown-content">
+          <a routerLink="/login/user">User</a><br>
+          <a routerLink="/login/admin">Admin</a>
+        </div>
+      </div>
+    </div>
+    <div class="main-content">
+      <!-- Your homepage content goes here -->
+    </div>
+    <div class="main-content">
+        <router-outlet></router-outlet>
+      </div>
+      
+  </div>
+  
