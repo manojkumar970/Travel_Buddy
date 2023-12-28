@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -7,10 +8,27 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  // showDropdown: boolean = false;
+  loginForm!: FormGroup;
 
-  // toggleDropdown() {
-  //   this.showDropdown = !this.showDropdown;
-  // }
+  constructor(private fb: FormBuilder) {}
 
+  ngOnInit() {
+    this.initializeForm();
+  }
+
+  initializeForm() {
+    this.loginForm = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+    });
+  }
+
+  // Define the submitForm method
+  submitForm() {
+    if (this.loginForm.valid) {
+      const formData = this.loginForm.value;
+      // Add logic to handle login (e.g., send data to server)
+      console.log('Login form submitted:', formData);
+    }
+  }
 }

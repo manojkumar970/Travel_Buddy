@@ -4,13 +4,7 @@
       <a routerLink="/about" class="sidebar-button">About Us</a>
       <a routerLink="/contact" class="sidebar-button">Contact Us</a>
       <a routerLink="/register" class="sidebar-button">Register</a>
-      <div class="login-dropdown">
-        <a (click)="toggleDropdown()">Login</a>
-        <div *ngIf="showDropdown" class="dropdown-content">
-          <a routerLink="/login/user-login">User</a><br>
-          <a routerLink="/login/admin-login">Admin</a>
-        </div>
-      </div>
+      <a routerLink="/login" class="sidebar-button">Login</a>
     </div>
     <div class="main-content">
       <!-- Your homepage content goes here -->

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -6,7 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent {
+export class RegisterComponent  implements OnInit{
   registrationForm!: FormGroup;
 
   constructor(private fb: FormBuilder) {}
@@ -17,10 +17,12 @@ export class RegisterComponent {
 
   initializeForm() {
     this.registrationForm = this.fb.group({
-      username: ['', Validators.required],
+      name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
+      address: ['', Validators.required],
+      mobile: ['', Validators.required],
+      gender: ['', Validators.required],
       password: ['', Validators.required],
-      // Add more form controls as needed
     });
   }
 
@@ -31,5 +33,4 @@ export class RegisterComponent {
       console.log('Form submitted:', formData);
     }
   }
-
 }
