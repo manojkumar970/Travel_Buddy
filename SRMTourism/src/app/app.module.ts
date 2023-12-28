@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, enableProdMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,9 @@ import { UserComponent } from './user/user.component';
 import { AdminAddLocationPackageComponent } from './admin/admin-add-location-package/admin-add-location-package.component';
 import { AdminViewReservationComponent } from './admin/admin-view-reservation/admin-view-reservation.component';
 import { AdminViewUsersComponent } from './admin/admin-view-users/admin-view-users.component';
+import { HttpClientModule } from '@angular/common/http';
+
+enableProdMode();
 
 @NgModule({
   declarations: [
@@ -33,7 +36,8 @@ import { AdminViewUsersComponent } from './admin/admin-view-users/admin-view-use
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

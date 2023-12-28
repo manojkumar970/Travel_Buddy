@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent  implements OnInit{
+export class RegisterComponent implements OnInit {
+
+  name: String = "";
+  email: String = "";
+  address: String = "";
+  mobile: any = "";
+  gender: any = "";
+  password: String = "";
+
+
   registrationForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private http: HttpClient) { }
 
   ngOnInit() {
     this.initializeForm();
@@ -28,9 +38,27 @@ export class RegisterComponent  implements OnInit{
 
   submitForm() {
     if (this.registrationForm.valid) {
-      const formData = this.registrationForm.value;
-      // Add logic to handle form submission (e.g., send data to server)
-      console.log('Form submitted:', formData);
+
+      let bodyData = {
+        "name": this.registrationForm.value.name,
+        "email": this.registrationForm.value.email,
+        "address": this.registrationForm.value.address,
+        "mobile": this.registrationForm.value.mobile,
+        "gender": this.registrationForm.value.gender,
+        "password": this.registrationForm.value.password
+      };
+      this.http.post("http://localhost:8080/register", bodyData, { responseType: 'text' }).subscribe((resultData: any) => {
+        console.log(bodyData);
+        alert("Employee Registered Successfully");
+        
+      });
+    
+      
+    }else{
+      alert("Employee not Registered");
     }
   }
+
+
+
 }
