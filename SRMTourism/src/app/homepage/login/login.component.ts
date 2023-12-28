@@ -7,10 +7,10 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  showDropdown: boolean = false;
+  // showDropdown: boolean = false;
 
-  toggleDropdown() {
-    this.showDropdown = !this.showDropdown;
-  }
+  // toggleDropdown() {
+  //   this.showDropdown = !this.showDropdown;
+  // }
 
 }

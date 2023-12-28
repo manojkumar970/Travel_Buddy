@@ -23,7 +23,7 @@ export class AdminLoginComponent {
       console.log('Admin authentication successful');
 
       // Navigate to the next page (e.g., admin dashboard)
-      this.router.navigate(['/admin-dashboard']);
+      this.router.navigate(['/admin dashboard']);
     } else {
       // Authentication failed
       console.log('Admin authentication failed');

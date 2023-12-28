@@ -7,14 +7,8 @@ import { Router, RouterLink } from '@angular/router';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent {
-  //constructor(private router: Router) {}
-
-  navigateToRegistration() {
-    // Navigate to the registration page
-    //this.router.navigate(['/registration']);
-    
-      
-      //new RouterLink('/registration');
+  constructor(private router: Router) {}
+  login(){
+    return this.router.navigate(['/user']) 
   }
-
 }

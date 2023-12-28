@@ -1,5 +1,19 @@
 .homepage-container {
     display: flex;
+    
+
+  }
+  .background-image-container{
+    background-image: url('/assets/images/bgimage.jpg');
+  
+  /* Set the background size */
+  background-size: cover; /* Other options: contain, auto, etc. */
+
+  /* Set the size of the container */
+  width: 100%; /* Set the width to 100% of the container */
+  height: 745px; /* Set the height to 300 pixels (adjust as needed) */
+  
+
   }
   
   .sidebar {
@@ -27,9 +41,13 @@
   .sidebar-button:hover {
     background-color: #555;
   }
+  .login-dropdown:hover{
+    background-color: #555;
+  }
   
   .main-content {
     flex-grow: 1;
     padding: 20px;
   }
+
   
