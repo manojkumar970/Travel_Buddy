@@ -1,12 +1,13 @@
 
 div {
-    max-width: 800px;
+    /* max-width: 800px; */
     margin: auto;
-    padding: 20px;
+    padding: 5px;
   }
   
   h2 {
     color: #333;
+    text-align: center;
   }
   
   p {
