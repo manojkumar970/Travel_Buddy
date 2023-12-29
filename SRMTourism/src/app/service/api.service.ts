@@ -11,11 +11,6 @@ export class ApiService {
 
 
   private baseUrl = 'http://localhost:8080'; 
-  // loginUser(email: string, password: string):Observable<Object> {
-  //   const body = { email, password };
-  //   return this.http.post(this.loginUrl, body);
-  // }
-
 
   loginUser(credentials: { email: string, password: string }): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/login`, credentials);
