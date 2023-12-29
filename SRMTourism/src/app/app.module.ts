@@ -14,6 +14,9 @@ import { AdminAddLocationPackageComponent } from './admin/admin-add-location-pac
 import { AdminViewReservationComponent } from './admin/admin-view-reservation/admin-view-reservation.component';
 import { AdminViewUsersComponent } from './admin/admin-view-users/admin-view-users.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HistoryComponent } from './user/history/history.component';
+import { BookingComponent } from './user/booking/booking.component';
+import { TypingAnimationDirective } from './typing-animation.directive';
 
 enableProdMode();
 
@@ -29,7 +32,10 @@ enableProdMode();
     UserComponent,
     AdminAddLocationPackageComponent,
     AdminViewReservationComponent,
-    AdminViewUsersComponent
+    AdminViewUsersComponent,
+    HistoryComponent,
+    BookingComponent,
+    TypingAnimationDirective
    
   ],
   imports: [
