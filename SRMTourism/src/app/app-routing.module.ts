@@ -10,6 +10,8 @@ import { UserComponent } from './user/user.component';
 import { AdminAddLocationPackageComponent } from './admin/admin-add-location-package/admin-add-location-package.component';
 import { AdminViewReservationComponent } from './admin/admin-view-reservation/admin-view-reservation.component';
 import { AdminViewUsersComponent } from './admin/admin-view-users/admin-view-users.component';
+import { HistoryComponent } from './user/history/history.component';
+import { BookingComponent } from './user/booking/booking.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: 'admin-view-reservation',component:AdminViewReservationComponent},
   { path: 'admin-view-users',component:AdminViewUsersComponent},
   { path: 'login',component: LoginComponent},
+  { path: 'history',component:HistoryComponent},
+  { path: 'booking',component:BookingComponent},
 ];
 
 @NgModule({

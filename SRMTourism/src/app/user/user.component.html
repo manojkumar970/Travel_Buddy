@@ -1,6 +1,31 @@
-<p>user works!</p>
-<button>Tour Booking</button><br><br>
-<button>Manage Booking</button><br><br>
-<button>Generate tickets</button><br>
-<p>Regarding Queries</p><br><br>
-<button>Change password?</button>
+<div class="user">
+    <!-- navbar.component.html -->
+
+<div class="navbar">
+    <div class="navbar-left">
+      <a routerLink="/booking">Booking</a>
+      <a routerLink="/history">History</a>
+      <a routerLink="/contact">Contact Us</a>
+    </div>
+    <div class="navbar-right">
+      <a (click)="logout()">Logout</a>
+    </div>
+  </div>
+  <!-- user.component.html -->
+
+<div class="user-container">
+    <div class="item" *ngFor="let item of items">
+      <img [src]="item.imageUrl" alt="{{ item.name }}" />
+      <div class="item-content">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+        <div class="booking-options">
+          <p>Price: {{ item.price }}</p>
+          <button (click)="bookItem(item)">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
