@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -15,11 +16,15 @@ export class RegisterComponent implements OnInit {
   mobile: any = "";
   gender: any = "";
   password: String = "";
+  
+  
+
+  
 
 
   registrationForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) { }
+  constructor(private fb: FormBuilder, private http: HttpClient,private router: Router) { }
 
   ngOnInit() {
     this.initializeForm();
@@ -50,9 +55,11 @@ export class RegisterComponent implements OnInit {
       this.http.post("http://localhost:8080/register", bodyData, { responseType: 'text' }).subscribe((resultData: any) => {
         console.log(bodyData);
         alert("Employee Registered Successfully");
+        this.router.navigate(['/login'])
         
       });
-    
+
+      
       
     }else{
       alert("Employee not Registered");
