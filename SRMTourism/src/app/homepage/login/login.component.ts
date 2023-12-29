@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +9,9 @@ import { RouterModule } from '@angular/router';
 })
 export class LoginComponent {
   loginForm!: FormGroup;
+  loginError: string = '';
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private apiService: ApiService) {}
 
   ngOnInit() {
     this.initializeForm();
@@ -18,17 +19,27 @@ export class LoginComponent {
 
   initializeForm() {
     this.loginForm = this.fb.group({
-      username: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
   }
 
-  // Define the submitForm method
   submitForm() {
     if (this.loginForm.valid) {
-      const formData = this.loginForm.value;
-      // Add logic to handle login (e.g., send data to server)
-      console.log('Login form submitted:', formData);
+      //let  { email, password } = this.loginForm.value;
+      let bodyData = {
+        "email": this.loginForm.value.email,
+        "password": this.loginForm.value.password
+      };
+      console.log(bodyData)
+      this.apiService.loginUser(bodyData).subscribe(data=>{
+        alert("login success");
+      },
+        (error) => {
+          alert('Invalid email or password. Please try again.'); // Display error message on login failure
+          //console.error('Login error:', error);
+        }
+      );
     }
   }
 }

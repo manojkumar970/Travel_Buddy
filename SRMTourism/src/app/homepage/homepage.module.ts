@@ -10,6 +10,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  declarations: [LoginComponent],  // Make sure LoginComponent is declared here
+  declarations: [],  // Make sure LoginComponent is declared here
 })
 export class HomepageModule { }

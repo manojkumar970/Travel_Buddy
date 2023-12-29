@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-register',
@@ -19,7 +20,7 @@ export class RegisterComponent implements OnInit {
 
   registrationForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) { }
+  constructor(private fb: FormBuilder, private http: HttpClient, private apiService:ApiService) { }
 
   ngOnInit() {
     this.initializeForm();
@@ -37,9 +38,9 @@ export class RegisterComponent implements OnInit {
   }
 
   submitForm() {
-    if (this.registrationForm.valid) {
+    if(this.registrationForm.valid) {
 
-      let bodyData = {
+      let user = {
         "name": this.registrationForm.value.name,
         "email": this.registrationForm.value.email,
         "address": this.registrationForm.value.address,
@@ -47,16 +48,15 @@ export class RegisterComponent implements OnInit {
         "gender": this.registrationForm.value.gender,
         "password": this.registrationForm.value.password
       };
-      this.http.post("http://localhost:8080/register", bodyData, { responseType: 'text' }).subscribe((resultData: any) => {
-        console.log(bodyData);
+      console.log(user);
+      this.apiService.register(user).subscribe((resultData: any) => {
         alert("Employee Registered Successfully");
-        
-      });
-    
-      
-    }else{
-      alert("Employee not Registered");
-    }
+       })
+      }
+      else{
+        alert("Employee not Registered");
+      }; 
+   
   }
 
 

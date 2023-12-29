@@ -3,9 +3,10 @@
 <div class="login-container">
     <h2>Login</h2>
     <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+      <div *ngIf="loginError" class="error">{{ loginError }}</div>
       <div class="form-group">
         <label for="username">Username:</label>
-        <input type="text" id="username" formControlName="username" required>
+        <input type="email" id="email" formControlName="email" required placeholder="Enter your email ">
       </div>
   
       <div class="form-group">
