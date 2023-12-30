@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/service/api.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class LoginComponent {
   loginForm!: FormGroup;
   loginError: string = '';
 
-  constructor(private fb: FormBuilder, private apiService: ApiService) {}
+  constructor(private router: Router,private fb: FormBuilder, private apiService: ApiService) {}
 
   ngOnInit() {
     this.initializeForm();
@@ -25,7 +26,6 @@ export class LoginComponent {
   }
 
   submitForm() {
-    if (this.loginForm.valid) {
       //let  { email, password } = this.loginForm.value;
       let bodyData = {
         "email": this.loginForm.value.email,
@@ -33,13 +33,13 @@ export class LoginComponent {
       };
       console.log(bodyData)
       this.apiService.loginUser(bodyData).subscribe(data=>{
-        alert("login success");
-      },
-        (error) => {
-          alert('Invalid email or password. Please try again.'); // Display error message on login failure
-          //console.error('Login error:', error);
+        console.log(data)
+        if(data.status){
+          this.router.navigate(['/user']);
+        }else{
+          alert("login unsuccessfull");
         }
-      );
-    }
+        
+      });
   }
 }

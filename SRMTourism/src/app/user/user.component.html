@@ -1,7 +1,7 @@
 <div class="user">
-    <!-- navbar.component.html -->
+  <!-- navbar.component.html -->
 
-<div class="navbar">
+  <div class="navbar">
     <div class="navbar-left">
       <a routerLink="/booking">Booking</a>
       <a routerLink="/history">History</a>
@@ -13,19 +13,21 @@
   </div>
   <!-- user.component.html -->
 
-<div class="user-container">
+  <div class="user-container">
     <div class="item" *ngFor="let item of items">
-      <img [src]="item.imageUrl" alt="{{ item.name }}" />
+    <img [src]="item.imageUrl" alt="" />
       <div class="item-content">
-        <h3>{{ item.name }}</h3>
-        <p>{{ item.description }}</p>
+        <h2>{{item.location}}</h2>
+        <p>{{item.description}}</p>
+
         <div class="booking-options">
           <p>Price: {{ item.price }}</p>
           <button (click)="bookItem(item)">Book Now</button>
         </div>
+
       </div>
     </div>
   </div>
-  
-  
+  l̥
+
 </div>

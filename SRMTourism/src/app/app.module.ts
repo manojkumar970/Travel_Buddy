@@ -35,7 +35,7 @@ enableProdMode();
     AdminViewUsersComponent,
     HistoryComponent,
     BookingComponent,
-    TypingAnimationDirective
+    TypingAnimationDirective,
    
   ],
   imports: [

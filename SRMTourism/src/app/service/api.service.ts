@@ -13,11 +13,15 @@ export class ApiService {
   private baseUrl = 'http://localhost:8080'; 
 
   loginUser(credentials: { email: string, password: string }): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/login`, credentials);
+    return this.http.post<any>(`${this.baseUrl}/loginAccount`, credentials);
   }
 
   register(user: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/register`, user);
+  }
+
+  getAllPackages(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/getAllPackage`);
   }
 
 }
