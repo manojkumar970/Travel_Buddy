@@ -8,14 +8,30 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent {
   constructor(private router: Router) {}
-  addlocation(){
-    return this.router.navigate(['/admin-add-location']) 
-  }
-  admin_view_reservation(){
-    return this.router.navigate(['/admin-view-reservation'])
-  }
-admin_view_users(){
-  return this.router.navigate(['/admin-view-users'])
+  
+addLocationandpackage() {
+  this.router.navigate(['/admin-add-location'])
+  console.log('Add Location clicked');
+  // Add your logic for adding a location here
+}
+
+editLocationandpackage() {
+  this.router.navigate(['/admin-add-location'])
+  console.log('Edit Location clicked');
+  // Add your logic for editing a location here
+}
+
+
+viewReservation() {
+  this.router.navigate(['/admin-view-reservation'])
+  console.log('View Reservation clicked');
+  // Add your logic for viewing reservations here
+}
+
+viewUsers() {
+  this.router.navigate(['/admin-view-users'])
+  console.log('View Users clicked');
+  // Add your logic for viewing users here
 }
 
 }

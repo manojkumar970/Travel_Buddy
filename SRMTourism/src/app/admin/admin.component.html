@@ -1,5 +1,34 @@
-<p>admin works!</p>
-<button (click)="addlocation()">Add location package</button><br><br>
-<button (click)="admin_view_reservation()">Admin view reservation</button><br><br>
-<button (click)="admin_view_users()">Admin View Users</button><br><br>
-<button>Reserved users</button><br>
+<h2>Admin Dashboard</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Module</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Add Location -->
+        <tr>
+          <td>Add Location and package</td>
+          <td>
+            <button  class="btn-btn-primary"  (click)="addLocationandpackage()">Add</button>
+            <button  class="btn-btn-danger" (click)="editLocationandpackage()">Edit</button>
+          </td>
+        </tr>
+        <!-- Admin View Reservation -->
+        <tr>
+          <td>Admin View Reservation</td>
+          <td>
+            <button (click)="viewReservation()">View</button>
+          </td>
+        </tr>
+
+        <!-- Admin View Users -->
+        <tr>
+          <td>Admin View Users</td>
+          <td>
+            <button (click)="viewUsers()">View</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
