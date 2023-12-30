@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-register',
@@ -15,15 +16,11 @@ export class RegisterComponent implements OnInit {
   mobile: any = "";
   gender: any = "";
   password: String = "";
-  
-  
-
-  
 
 
   registrationForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) { }
+  constructor(private fb: FormBuilder, private http: HttpClient, private apiService:ApiService) { }
 
   ngOnInit() {
     this.initializeForm();
@@ -54,13 +51,12 @@ export class RegisterComponent implements OnInit {
       console.log(user);
       this.apiService.register(user).subscribe((resultData: any) => {
         alert("Employee Registered Successfully");
-        
-      });
-    
-      
-    }else{
-      alert("Employee not Registered");
-    }
+       })
+      }
+      else{
+        alert("Employee not Registered");
+      }; 
+   
   }
 
 
