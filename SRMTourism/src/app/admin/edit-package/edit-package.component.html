@@ -1,0 +1,38 @@
+<div>
+    <h2 class="editpackage">Edit Package</h2>
+    <!-- Add form fields to edit package details, including image -->
+    <div class="adminform">
+        <form class="form-group">
+          <div class="form-group">
+            <label for="placeName">Name of Place</label>
+            <input type="text" id="placeName" formControlName="placeName" class="form-control" required>
+          </div>
+        
+          <div class="form-group">
+            <label for="placeDescription">Description of Place</label>
+            <textarea id="placeDescription" formControlName="placeDescription" class="form-control" required></textarea>
+          </div>
+        
+          <div class="form-group">
+            <label for="numberOfDays">Number of Days</label>
+            <input type="text" id="numberOfDays" formControlName="numberOfDays" class="form-control" required pattern="\d+">
+          </div>
+        
+          <div class="form-group">
+            <label for="tripPackage">Package of the Trip</label>
+            <input type="text" id="tripPackage" formControlName="tripPackage" class="form-control" required>
+          </div>
+        
+          <div class="form-group">
+            <label for="placeImage">Image of the Place</label>
+            <input type="file" id="placeImage" formControlName="placeImage" class="form-control-file" accept="image/*">
+          </div>
+        
+          <div class="text-center">
+            <button  (click)="saveChanges()" class="btn btn-dark">Save Changes</button>
+          </div>
+        </form>
+        
+      </div>
+    
+  </div>

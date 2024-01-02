@@ -15,10 +15,9 @@ addLocationandpackage() {
   // Add your logic for adding a location here
 }
 
-editLocationandpackage() {
-  this.router.navigate(['/admin-add-location'])
-  console.log('Edit Location clicked');
-  // Add your logic for editing a location here
+viewAllPackages(){
+  this.router.navigate(['/admin-view-all-packages']);
+  console.log('View All Packages');
 }
 
 

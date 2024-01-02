@@ -11,15 +11,14 @@
         <tr>
           <td>Add Location and package</td>
           <td>
-            <button  class="btn-btn-primary"  (click)="addLocationandpackage()">Add</button>
-            <button  class="btn-btn-danger" (click)="editLocationandpackage()">Edit</button>
+            <button  (click)="addLocationandpackage()" class="btn btn-primary">Add</button>
           </td>
         </tr>
         <!-- Admin View Reservation -->
         <tr>
           <td>Admin View Reservation</td>
           <td>
-            <button (click)="viewReservation()">View</button>
+            <button (click)="viewReservation()" class="btn btn-primary">View</button>
           </td>
         </tr>
 
@@ -27,7 +26,14 @@
         <tr>
           <td>Admin View Users</td>
           <td>
-            <button (click)="viewUsers()">View</button>
+            <button (click)="viewUsers()" class="btn btn-primary">View</button>
+          </td>
+        </tr>
+        <!-- Admin View All Packages -->
+        <tr>
+          <td>Admin View All Packages</td>
+          <td>
+            <button (click)="viewAllPackages()" class="btn btn-primary">View</button>
           </td>
         </tr>
       </tbody>

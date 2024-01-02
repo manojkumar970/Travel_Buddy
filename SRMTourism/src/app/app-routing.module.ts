@@ -12,6 +12,8 @@ import { AdminViewReservationComponent } from './admin/admin-view-reservation/ad
 import { AdminViewUsersComponent } from './admin/admin-view-users/admin-view-users.component';
 import { HistoryComponent } from './user/history/history.component';
 import { BookingComponent } from './user/booking/booking.component';
+import { AdminViewAllPackagesComponent } from './admin/admin-view-all-packages/admin-view-all-packages.component';
+import { EditPackageComponent } from './admin/edit-package/edit-package.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -26,6 +28,9 @@ const routes: Routes = [
   { path: 'login',component: LoginComponent},
   { path: 'history',component:HistoryComponent},
   { path: 'booking',component:BookingComponent},
+  { path: 'admin-view-all-packages',component:AdminViewAllPackagesComponent},
+  { path: 'edit-package', component: EditPackageComponent },
+  
 ];
 
 @NgModule({
