@@ -8,6 +8,9 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent {
   constructor(private router: Router) {}
+  logout(){
+    this.router.navigate(['/login'])
+  }
   
 addLocationandpackage() {
   this.router.navigate(['/admin-add-location'])

@@ -14,6 +14,8 @@ import { HistoryComponent } from './user/history/history.component';
 import { BookingComponent } from './user/booking/booking.component';
 import { AdminViewAllPackagesComponent } from './admin/admin-view-all-packages/admin-view-all-packages.component';
 import { EditPackageComponent } from './admin/edit-package/edit-package.component';
+import { ForgetpwdComponent } from './homepage/forgetpwd/forgetpwd.component';
+import { PaymentComponent } from './user/payment/payment.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -30,6 +32,8 @@ const routes: Routes = [
   { path: 'booking',component:BookingComponent},
   { path: 'admin-view-all-packages',component:AdminViewAllPackagesComponent},
   { path: 'edit-package', component: EditPackageComponent },
+  { path: 'forgetpwd', component: ForgetpwdComponent },
+  { path: 'payment',component:PaymentComponent},
   
 ];
 

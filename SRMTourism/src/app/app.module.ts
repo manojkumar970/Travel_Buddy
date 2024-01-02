@@ -19,6 +19,8 @@ import { BookingComponent } from './user/booking/booking.component';
 import { TypingAnimationDirective } from './typing-animation.directive';
 import { AdminViewAllPackagesComponent } from './admin/admin-view-all-packages/admin-view-all-packages.component';
 import { EditPackageComponent } from './admin/edit-package/edit-package.component';
+import { ForgetpwdComponent } from './homepage/forgetpwd/forgetpwd.component';
+import { PaymentComponent } from './user/payment/payment.component';
 
 enableProdMode();
 
@@ -40,6 +42,8 @@ enableProdMode();
     TypingAnimationDirective,
     AdminViewAllPackagesComponent,
     EditPackageComponent,
+    ForgetpwdComponent,
+    PaymentComponent,
    
   ],
   imports: [
