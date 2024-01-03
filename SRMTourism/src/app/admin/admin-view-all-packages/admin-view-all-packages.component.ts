@@ -1,17 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-admin-view-all-packages',
   templateUrl: './admin-view-all-packages.component.html',
   styleUrls: ['./admin-view-all-packages.component.css']
 })
-export class AdminViewAllPackagesComponent implements OnInit{
-  
-  constructor(private router:Router){}
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+export class AdminViewAllPackagesComponent{
+  items:any;
+
+  constructor(private router: Router, private apiService: ApiService) {
+    apiService.getAllPackages().subscribe((resultData) => {
+      console.log("resultdata"+resultData);
+      this.items=resultData;
+
+      console.log(resultData)
+    })
+
+
   }
+<<<<<<< HEAD
   
    items = [
     {
@@ -72,5 +81,7 @@ export class AdminViewAllPackagesComponent implements OnInit{
 
   
 
+=======
+>>>>>>> 1599cc1dbfddb11dfda2ea93a2990911f3782b15
 
 }

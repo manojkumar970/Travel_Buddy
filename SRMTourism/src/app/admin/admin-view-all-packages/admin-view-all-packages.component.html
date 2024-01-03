@@ -1,10 +1,11 @@
 
 <div class="user-container">
     <div class="item" *ngFor="let item of items">
-    <img [src]="item.imageUrl" alt="" />
+    <img src={{item.img}} alt="" />
       <div class="item-content">
         <h2>{{item.location}}</h2>
         <p>{{item.description}}</p>
+<<<<<<< HEAD
       
 
         <div class="booking-options">
@@ -14,9 +15,10 @@
           <button class="btn-left" class="btn btn-danger">Delete</button>
           </div>
         </div>
+=======
+        <p>{{item.price | currency:"INR":"symbol"}}</p>
+>>>>>>> 1599cc1dbfddb11dfda2ea93a2990911f3782b15
 
       </div>
     </div>
   </div>
-  
-

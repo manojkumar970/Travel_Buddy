@@ -41,6 +41,7 @@
   
   .sidebar-button:hover {
     background-color: #555;
+    cursor: pointer;
   }
   .login-dropdown:hover{
     background-color: #555;

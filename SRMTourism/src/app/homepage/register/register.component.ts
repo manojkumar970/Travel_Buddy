@@ -10,14 +10,6 @@ import { ApiService } from 'src/app/service/api.service';
 })
 export class RegisterComponent implements OnInit {
 
-  name: String = "";
-  email: String = "";
-  address: String = "";
-  mobile: any = "";
-  gender: any = "";
-  password: String = "";
-
-
   registrationForm!: FormGroup;
 
   constructor(private fb: FormBuilder, private http: HttpClient, private apiService:ApiService) { }
@@ -37,17 +29,8 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  submitForm() {
+  submitForm(user:any) {
     if(this.registrationForm.valid) {
-
-      let user = {
-        "name": this.registrationForm.value.name,
-        "email": this.registrationForm.value.email,
-        "address": this.registrationForm.value.address,
-        "mobile": this.registrationForm.value.mobile,
-        "gender": this.registrationForm.value.gender,
-        "password": this.registrationForm.value.password
-      };
       console.log(user);
       this.apiService.register(user).subscribe((resultData: any) => {
         alert("Employee Registered Successfully");

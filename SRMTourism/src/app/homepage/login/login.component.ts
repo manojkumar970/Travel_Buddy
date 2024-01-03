@@ -34,9 +34,15 @@ export class LoginComponent {
       console.log(bodyData)
       this.apiService.loginUser(bodyData).subscribe(data=>{
         console.log(data)
-        if(data.status){
+        if(data.role=="USER"){
+          sessionStorage.setItem('access_token', data.jwtToken)
           this.router.navigate(['/user']);
-        }else{
+        }
+        else if(data.role=="ADMIN"){
+          sessionStorage.setItem('access_token', data.jwtToken)
+          this.router.navigate(['/admin']);
+        }
+        else{
           alert("login unsuccessfull");
         }
         

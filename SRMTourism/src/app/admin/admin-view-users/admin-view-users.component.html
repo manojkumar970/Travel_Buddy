@@ -2,16 +2,19 @@
 <table>
     <tr>
       <th>User ID</th>
-      <th>Username</th>
-      <th>Email</th>
+      <th>User name</th>
+      <th>Address</th>
+      <th>Mobile</th>
+      <th>Gender</th>
       <!-- Add other user details as needed -->
     </tr>
-    <!-- <tr *ngFor="let user of users">
-      <td>{{ user.userId }}</td>
-      <td>{{ user.username }}</td>
-      <td>{{ user.email }}</td>
-    Display other user details as needed
-    </tr> -->
+    <tr *ngFor="let user of users">
+      <td>{{ user.email}}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.address }}</td>
+      <td>{{ user.mobile }}</td>
+      <td>{{ user.gender }}</td>
+    </tr>
   </table>
   
 

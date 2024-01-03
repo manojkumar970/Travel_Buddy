@@ -13,8 +13,10 @@ export class UserComponent {
 
   constructor(private router: Router, private apiService: ApiService) {
     apiService.getAllPackages().subscribe((resultData) => {
-      console.log(resultData);
+      console.log("resultdata"+resultData);
       this.items=resultData;
+
+      console.log(resultData)
     })
 
 
@@ -23,6 +25,7 @@ export class UserComponent {
   logout() {
     // Add logic for logout (e.g., clear user session)
     console.log('Logout clicked');
+    sessionStorage.removeItem("access_token")
     // Redirect to the login page or another desired page
     this.router.navigate(['/login']);
   }
@@ -32,49 +35,6 @@ export class UserComponent {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-
-
-
-
-  // items = [
-  //   {
-  //     imageUrl: 'assets/images/Hyderabad.jpg',
-  //     name: 'Item 1',
-  //     description: 'Description for Item 1',
-  //     price: '$50',
-  //   },
-  //   {
-  //     imageUrl: 'assets/images/Chennai.jpg',
-  //     name: 'Item 2',
-  //     description: 'Description for Item 2',
-  //     price: '$75',
-  //   },
-  //   {
-  //     imageUrl: 'assets/images/Delhi.jpg',
-  //     name: 'Item 3',
-  //     description: 'Description for Item 3',
-  //     price: '$100',
-  //   },
-  //   {
-  //     imageUrl: 'assets/images/Mumbai.jpg',
-  //     name: 'Item 3',
-  //     description: 'Description for Item 3',
-  //     price: '$100',
-  //   },
-  //   {
-  //     imageUrl: 'assets/images/Banglore.png',
-  //     name: 'Item 3',
-  //     description: 'Description for Item 3',
-  //     price: '$100',
-  //   },
-  //   {
-  //     imageUrl: 'assets/images/kerala.jpg',
-  //     name: 'Item 3',
-  //     description: 'Description for Item 3',
-  //     price: '$100',
-  //   },
-  //   // Add more items as needed
-  // ];
 
   bookItem(item: any) {
     // Add logic to handle booking for the selected item
