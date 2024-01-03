@@ -21,6 +21,8 @@ import { AdminViewAllPackagesComponent } from './admin/admin-view-all-packages/a
 import { EditPackageComponent } from './admin/edit-package/edit-package.component';
 import { ForgetpwdComponent } from './homepage/forgetpwd/forgetpwd.component';
 import { PaymentComponent } from './user/payment/payment.component';
+import { SettingsComponent } from './user/settings/settings.component';
+import { ProfileComponent } from './user/profile/profile.component';
 
 enableProdMode();
 
@@ -44,6 +46,8 @@ enableProdMode();
     EditPackageComponent,
     ForgetpwdComponent,
     PaymentComponent,
+    SettingsComponent,
+    ProfileComponent,
    
   ],
   imports: [

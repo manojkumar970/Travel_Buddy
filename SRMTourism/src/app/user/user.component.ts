@@ -26,6 +26,11 @@ export class UserComponent {
     // Redirect to the login page or another desired page
     this.router.navigate(['/login']);
   }
+  isMenuOpen: boolean = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 
 
 

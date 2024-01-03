@@ -5,11 +5,14 @@
       <div class="item-content">
         <h2>{{item.location}}</h2>
         <p>{{item.description}}</p>
-        <p>{{item.price}}</p>
+      
 
         <div class="booking-options">
-          <p>Price: {{ item.price }}</p>
-          <button (click)="bookItem(item)" class="btn btn-primary">Edit</button>
+          <p class="book-right">Price: {{ item.price }}</p>
+          <div class="book-left">
+            <button (click)="adminaddpackage()" class="btn-right"  class="btn btn-primary">Edit</button>
+          <button class="btn-left" class="btn btn-danger">Delete</button>
+          </div>
         </div>
 
       </div>

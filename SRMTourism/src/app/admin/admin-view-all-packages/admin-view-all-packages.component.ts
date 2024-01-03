@@ -62,11 +62,11 @@ export class AdminViewAllPackagesComponent implements OnInit{
   //   this.router.navigate(['admin/edit-package/:id'])
   // }
 
-  bookItem(item: any) {
+  adminaddpackage() {
     // Add logic to handle booking for the selected item
     // Add logic to handle booking for the selected item
     this['router'].navigate(['/edit-package'])
-    console.log('Booking item:', item.name);
+    //console.log('Booking item:', item.name);
   }
 
 

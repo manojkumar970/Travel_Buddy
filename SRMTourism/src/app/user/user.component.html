@@ -1,19 +1,32 @@
-<div class="user">
+<!-- <div class="user"> -->
   <!-- navbar.component.html -->
 
-  <div class="navbar">
+  <!-- <div class="navbar">
     <div class="navbar-left">
       <a routerLink="/booking">Booking</a>
       <a routerLink="/history">History</a>
       <a routerLink="/contact">Contact Us</a>
     </div>
     <div class="navbar-right">
+      <div class="searchbox">
+        <img src="assets/images/search-icon.png">
+        <input type="text" placeholder="Search">
+
+      </div>
+      <div class="nav-usericon">
+        <img src="assets/images/profile-img.png">
+
+      </div>
+    </div> -->
+    <!-- <div class="navbar-right">
       <a (click)="logout()">Logout</a>
-    </div>
-  </div>
+    </div> -->
+    <!-- navbar.component.html -->
+
+  <!-- </div> -->
   <!-- user.component.html -->
 
-  <div class="user-container">
+  <!-- <div class="user-container">
     <div class="item" *ngFor="let item of items">
     <img [src]="item.imageUrl" alt="" />
       <div class="item-content">
@@ -28,6 +41,55 @@
       </div>
     </div>
   </div>
-  l̥
+  
 
+
+</div> -->
+<div class="hero">
+  <nav>
+    <p class="logo">User Dashboard</p>
+    <ul>
+      <li><a href="/home">Home</a></li>
+      <li><a href="/booking">Booking</a></li>
+      <li><a href="/history">History</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+      <li><a href="/about">About Us</a></li>
+    </ul>
+    <img src="assets/images/profile-img.png" class="user-pic" (click)="toggleMenu()">
+    <div [ngClass]="{'open-menu': isMenuOpen}" class="submenu">
+      <!-- Submenu content goes here -->
+      <div class="sub-menu-wrap" id="subMenu">
+        <div class="sub-menu">
+          <div class="user-info">
+            <img src="assets/images/profile-img.png">
+            <h2>User name</h2>
+          </div>
+          <hr>
+          <a href="#" class="sub-menu-link">
+            <img src="assets/images/profile.png" alt="">
+            <p>Edit Profile</p>
+            <span>></span>
+          </a>
+          <a href="#" class="sub-menu-link">
+            <img src="assets/images/setting.png" alt="">
+            <p>Settings & Privacy</p>
+            <span>></span>
+          </a>
+          <a href="#" class="sub-menu-link">
+            <img src="assets/images/help.png" alt="">
+            <p>Help & Support</p>
+            <span>></span>
+          </a>
+          <a href="#" class="sub-menu-link">
+            <img src="assets/images/logout.png" alt="">
+            <p>Logout</p>
+            <span>></span>
+          </a>
+        </div>
+      </div>
+    
+    </div>
+
+  </nav>
+  
 </div>

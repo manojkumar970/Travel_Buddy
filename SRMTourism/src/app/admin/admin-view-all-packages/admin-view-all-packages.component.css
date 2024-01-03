@@ -30,4 +30,13 @@
     margin-top: 10px;
   }
   
-  
+  .book-right{
+    display: flex;
+  }
+  .book-left{
+    display: flex;
+    align-content: space-between;
+  }
+  .btn-left{
+    margin-right: 5px;
+  }
