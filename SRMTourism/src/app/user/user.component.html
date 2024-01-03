@@ -21,13 +21,12 @@
         <p>{{item.description}}</p>
 
         <div class="booking-options">
-          <p>Price: {{ item.price }}</p>
+          <p>Price: {{ item.price | currency:"INR":"symbol" }}</p>
           <button (click)="bookItem(item)">Book Now</button>
         </div>
 
       </div>
     </div>
   </div>
-  l̥
 
 </div>

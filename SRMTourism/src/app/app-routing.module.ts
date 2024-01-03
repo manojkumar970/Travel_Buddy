@@ -12,14 +12,12 @@ import { AdminViewReservationComponent } from './admin/admin-view-reservation/ad
 import { AdminViewUsersComponent } from './admin/admin-view-users/admin-view-users.component';
 import { HistoryComponent } from './user/history/history.component';
 import { BookingComponent } from './user/booking/booking.component';
-<<<<<<< HEAD
+
 import { AuthGuardGuard } from './guards/auth-guard.guard';
-=======
 import { AdminViewAllPackagesComponent } from './admin/admin-view-all-packages/admin-view-all-packages.component';
 import { EditPackageComponent } from './admin/edit-package/edit-package.component';
 import { ForgetpwdComponent } from './homepage/forgetpwd/forgetpwd.component';
 import { PaymentComponent } from './user/payment/payment.component';
->>>>>>> 6b7e79ec32dca6abec9185354964cd43516e0b3b
 
 const routes: Routes = [
   { path: 'home', component: HomepageComponent },
@@ -37,22 +35,18 @@ const routes: Routes = [
   { path: 'admin-view-users',component:AdminViewUsersComponent,
   canActivate:[AuthGuardGuard]},
   { path: 'login',component: LoginComponent},
-<<<<<<< HEAD
   { path: 'history',component:HistoryComponent,
   canActivate:[AuthGuardGuard]},
   { path: 'booking',component:BookingComponent,
   canActivate:[AuthGuardGuard]},
-  {path:"**",
-  redirectTo:"home"}
-=======
   { path: 'history',component:HistoryComponent},
   { path: 'booking',component:BookingComponent},
   { path: 'admin-view-all-packages',component:AdminViewAllPackagesComponent},
   { path: 'edit-package', component: EditPackageComponent },
   { path: 'forgetpwd', component: ForgetpwdComponent },
   { path: 'payment',component:PaymentComponent},
+  {path:"**", redirectTo:"home"},
   
->>>>>>> 6b7e79ec32dca6abec9185354964cd43516e0b3b
 ];
 
 @NgModule({

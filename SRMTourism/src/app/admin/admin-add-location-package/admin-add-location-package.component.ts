@@ -16,7 +16,7 @@ export class AdminAddLocationPackageComponent {
       description: ['', Validators.required],
       day: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
       price: ['', Validators.required],
-      image: ['']
+      img: ['']
     });
   }
 
