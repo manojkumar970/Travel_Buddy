@@ -2,7 +2,7 @@
 
 <div class="registration-container">
   <h2>User Registration</h2>
-  <form [formGroup]="registrationForm" (ngSubmit)="submitForm()">
+  <form [formGroup]="registrationForm" (ngSubmit)="submitForm(registrationForm.value)">
     <div class="form-group">
       <label for="name">Name:</label>
       <input type="text" id="name" formControlName="name" required>

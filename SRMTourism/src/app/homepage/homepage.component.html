@@ -4,7 +4,8 @@
       <a routerLink="/about" class="sidebar-button">About Us</a>
       <a routerLink="/contact" class="sidebar-button">Contact Us</a>
       <a routerLink="/register" class="sidebar-button">Register</a>
-      <a routerLink="/login" class="sidebar-button">Login</a>
+      <a *ngIf="!isLoggedIn" routerLink="/login" class="sidebar-button">Login</a>
+      <a *ngIf="isLoggedIn" (click)="onClickLogOut()" class="sidebar-button">Logout</a>
     </div>
     <div class="main-content">
       <!-- Your homepage content goes here -->

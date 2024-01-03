@@ -12,20 +12,30 @@ import { AdminViewReservationComponent } from './admin/admin-view-reservation/ad
 import { AdminViewUsersComponent } from './admin/admin-view-users/admin-view-users.component';
 import { HistoryComponent } from './user/history/history.component';
 import { BookingComponent } from './user/booking/booking.component';
+import { AuthGuardGuard } from './guards/auth-guard.guard';
 
 const routes: Routes = [
-  { path: '', component: HomepageComponent },
+  { path: 'home', component: HomepageComponent },
   { path: 'about', component: AboutUsComponent },
   { path: 'contact', component: ContactUsComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'admin', component:AdminComponent},
-  { path: 'user', component:UserComponent},
-  { path: 'admin-add-location', component:AdminAddLocationPackageComponent},
-  { path: 'admin-view-reservation',component:AdminViewReservationComponent},
-  { path: 'admin-view-users',component:AdminViewUsersComponent},
+  { path: 'admin', component:AdminComponent,
+  canActivate:[AuthGuardGuard]},
+  { path: 'user', component:UserComponent,
+    canActivate:[AuthGuardGuard]},
+  { path: 'admin-add-location', component:AdminAddLocationPackageComponent,
+  canActivate:[AuthGuardGuard]},
+  { path: 'admin-view-reservation',component:AdminViewReservationComponent,
+  canActivate:[AuthGuardGuard]},
+  { path: 'admin-view-users',component:AdminViewUsersComponent,
+  canActivate:[AuthGuardGuard]},
   { path: 'login',component: LoginComponent},
-  { path: 'history',component:HistoryComponent},
-  { path: 'booking',component:BookingComponent},
+  { path: 'history',component:HistoryComponent,
+  canActivate:[AuthGuardGuard]},
+  { path: 'booking',component:BookingComponent,
+  canActivate:[AuthGuardGuard]},
+  {path:"**",
+  redirectTo:"home"}
 ];
 
 @NgModule({

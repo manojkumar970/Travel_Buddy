@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-admin-add-location-package',
@@ -7,22 +8,26 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./admin-add-location-package.component.css']
 })
 export class AdminAddLocationPackageComponent {
-  tripForm: FormGroup;
+  tripForm !: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,private apiService:ApiService) {
     this.tripForm = this.formBuilder.group({
-      placeName: ['', Validators.required],
-      placeDescription: ['', Validators.required],
-      numberOfDays: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
-      tripPackage: ['', Validators.required],
-      placeImage: ['']
+      location: ['', Validators.required],
+      description: ['', Validators.required],
+      day: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
+      price: ['', Validators.required],
+      image: ['']
     });
   }
 
-  onSubmit() {
-    // Handle form submission logic here
-    const formData = this.tripForm.value;
-    console.log('Form Data:', formData);
-    // Add your logic to send the form data to the server or perform other actions
+  onSubmit(packageData:any) {
+    if (this.tripForm.valid) {
+   console.log(packageData);
+    this.apiService.addPackage(packageData).subscribe((data)=>{
+      console.log(data);
+      alert("Package added Successfully");
+    })
   }
+ }
+    
 }

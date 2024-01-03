@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -7,21 +7,44 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  constructor(private http: HttpClient) { }
+  private httpHeaders: HttpHeaders;
 
 
-  private baseUrl = 'http://localhost:8080'; 
-
-  loginUser(credentials: { email: string, password: string }): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/loginAccount`, credentials);
+  constructor(private http: HttpClient) {
+    this.httpHeaders = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + sessionStorage.getItem("access_token")
+      
+    });
   }
 
-  register(user: any): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/register`, user);
+  private getHttpOptions(): any {
+    return {
+      headers: this.httpHeaders,
+    };
   }
 
-  getAllPackages(): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/getAllPackage`);
-  }
+  private baseUrl = 'http://localhost:8080';
+
+loginUser(credentials: { email: string, password: string }): Observable < any > {
+  return this.http.post<any>(`${this.baseUrl}/loginAccount`, credentials);
+}
+
+register(user: any): Observable < any > {
+  return this.http.post<any>(`${this.baseUrl}/register`, user);
+}
+
+getAllPackages(): Observable < any > {
+  return this.http.get<any>(`${this.baseUrl}/getAllPackage`, this.getHttpOptions());
+}
+
+addPackage(tourPackage: any): Observable < any > {
+  console.log("Tour Package Data:", tourPackage);
+  return this.http.post<any>(`${this.baseUrl}/addPackage`, tourPackage,this.getHttpOptions());
+}
+
+getAllUsers(): Observable < any > {
+  return this.http.get<any>(`${this.baseUrl}/getAllUser`,this.getHttpOptions());
+}
 
 }
