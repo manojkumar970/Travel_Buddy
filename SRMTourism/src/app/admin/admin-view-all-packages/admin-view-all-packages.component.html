@@ -1,0 +1,19 @@
+
+<div class="user-container">
+    <div class="item" *ngFor="let item of items">
+    <img [src]="item.imageUrl" alt="" />
+      <div class="item-content">
+        <h2>{{item.location}}</h2>
+        <p>{{item.description}}</p>
+        <p>{{item.price}}</p>
+
+        <div class="booking-options">
+          <p>Price: {{ item.price }}</p>
+          <button (click)="bookItem(item)" class="btn btn-primary">Edit</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+

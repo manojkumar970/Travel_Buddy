@@ -8,6 +8,9 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent {
   constructor(private router: Router) {}
+  logout(){
+    this.router.navigate(['/login'])
+  }
   
 addLocationandpackage() {
   this.router.navigate(['/admin-add-location'])
@@ -15,10 +18,9 @@ addLocationandpackage() {
   // Add your logic for adding a location here
 }
 
-editLocationandpackage() {
-  this.router.navigate(['/admin-add-location'])
-  console.log('Edit Location clicked');
-  // Add your logic for editing a location here
+viewAllPackages(){
+  this.router.navigate(['/admin-view-all-packages']);
+  console.log('View All Packages');
 }
 
 
