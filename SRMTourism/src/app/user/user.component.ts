@@ -14,18 +14,19 @@ export class UserComponent {
   userId:any;
   
   constructor(private router: Router, private apiService: ApiService,private route:ActivatedRoute) {
-    apiService.getAllPackages().subscribe((resultData) => {
+   
+    this.route.queryParams.subscribe(params => {
+      this.userId = params['userId'];
+    });
+
+  }
+  ngOnInit(): void {
+    
+    this.apiService.getAllPackages().subscribe((resultData) => {
       console.log("resultdata"+resultData);
       this.items=resultData;
       console.log(resultData)
     })
-
-
-  }
-  ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      this.userId = params['userId'];
-    });
   }
   
 

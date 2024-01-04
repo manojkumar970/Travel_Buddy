@@ -36,10 +36,12 @@ export class LoginComponent {
         console.log(data.username)
         if(data.role=="USER"){
           sessionStorage.setItem('access_token', data.jwtToken)
+          this.apiService.updateCommonHeaders()
           this.router.navigate(['/user'],{ queryParams: { userId: data.username }});
         }
         else if(data.role=="ADMIN"){
           sessionStorage.setItem('access_token', data.jwtToken)
+          this.apiService.updateCommonHeaders()
           this.router.navigate(['/admin']);
         }
         else{

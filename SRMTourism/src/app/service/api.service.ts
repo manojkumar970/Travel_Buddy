@@ -8,10 +8,14 @@ import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 })
 export class ApiService {
 
-  private httpHeaders: HttpHeaders;
+  private httpHeaders: any;
 
 
   constructor(private http: HttpClient) {
+    
+  }
+
+  updateCommonHeaders(){
     this.httpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + sessionStorage.getItem("access_token")

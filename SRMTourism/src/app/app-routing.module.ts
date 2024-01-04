@@ -26,35 +26,69 @@ const routes: Routes = [
   { path: 'about', component: AboutUsComponent },
   { path: 'contact', component: ContactUsComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'admin', component:AdminComponent,
-  canActivate:[AuthGuardGuard]},
-  { path: 'user', component:UserComponent,
-    canActivate:[AuthGuardGuard]},
-  { path: 'admin-add-location', component:AdminAddLocationPackageComponent,
-  canActivate:[AuthGuardGuard]},
-  { path: 'admin-view-reservation',component:AdminViewReservationComponent,
-  canActivate:[AuthGuardGuard]},
-  { path: 'admin-view-users',component:AdminViewUsersComponent,
-  canActivate:[AuthGuardGuard]},
-  { path: 'login',component: LoginComponent},
-  { path: 'history',component:HistoryComponent,
-  canActivate:[AuthGuardGuard]},
-  { path: 'booking',component:BookingComponent,
-  canActivate:[AuthGuardGuard]},
-  { path: 'history',component:HistoryComponent},
-  { path: 'booking',component:BookingComponent},
-  { path: 'admin-view-all-packages',component:AdminViewAllPackagesComponent},
-  { path: 'edit-package', component: EditPackageComponent },
-  { path: 'forgetpwd', component: ForgetpwdComponent },
-  { path: 'payment',component:PaymentComponent},
-<<<<<<< HEAD
-  { path: 'profile', component: ProfileComponent },
-  { path: 'settings',component:SettingsComponent},
-
-=======
-  {path:"**", redirectTo:"home"},
->>>>>>> 1599cc1dbfddb11dfda2ea93a2990911f3782b15
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'admin', component: AdminComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'user', component: UserComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'admin-add-location', component: AdminAddLocationPackageComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'admin-view-reservation', component: AdminViewReservationComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'admin-view-users', component: AdminViewUsersComponent,
+    canActivate: [AuthGuardGuard]
+  },
   
+  {
+    path: 'history', component: HistoryComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'booking', component: BookingComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'history', component: HistoryComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'booking', component: BookingComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'admin-view-all-packages', component: AdminViewAllPackagesComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'edit-package', component: EditPackageComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'forgetpwd', component: ForgetpwdComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'payment', component: PaymentComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'profile', component: ProfileComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'settings', component: SettingsComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  { path: "**", redirectTo: "home" }
 ];
 
 @NgModule({
