@@ -1,0 +1,19 @@
+<!-- email-form.component.html -->
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form (ngSubmit)="submitForm()">
+          <!-- Email input -->
+          <div class="form-group">
+            <label for="inputEmail">Email address</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email" [(ngModel)]="email">
+          </div>
+  
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
