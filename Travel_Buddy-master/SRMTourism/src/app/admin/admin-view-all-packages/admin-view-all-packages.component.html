@@ -1,0 +1,12 @@
+
+<div class="user-container">
+    <div class="item" *ngFor="let item of items">
+    <img src={{item.img}} alt="" />
+      <div class="item-content">
+        <h2>{{item.location}}</h2>
+        <p>{{item.description}}</p>
+        <p>{{item.price | currency:"INR":"symbol"}}</p>
+
+      </div>
+    </div>
+  </div>

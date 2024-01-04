@@ -1,0 +1,52 @@
+<!-- booking-form.component.html -->
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form (ngSubmit)="reserveNow()">
+          <!-- Name input -->
+          <div class="form-group">
+            <label for="inputName">Name</label>
+            <input type="text" class="form-control" id="inputName" placeholder="Enter your name" [(ngModel)]="name" required>
+          </div>
+  
+          <!-- Email input -->
+          <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email" [(ngModel)]="email" required>
+          </div>
+  
+          <!-- Phone number input -->
+          <div class="form-group">
+            <label for="inputPhone">Phone Number</label>
+            <input type="tel" class="form-control" id="inputPhone" placeholder="Enter your phone number" [(ngModel)]="phone" required>
+          </div>
+  
+          <!-- Address input -->
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <textarea class="form-control" id="inputAddress" placeholder="Enter your address" [(ngModel)]="address" required></textarea>
+          </div>
+  
+          <!-- Start date input -->
+          <div class="form-group">
+            <label for="inputStartDate">Start Date of the Trip</label>
+            <input type="date" class="form-control" id="inputStartDate" [(ngModel)]="startDate" required>
+          </div>
+<!--   
+          Number of members input  -->
+          <div class="form-group">
+            <label for="inputMembers">Number of Members</label>
+            <input type="number" class="form-control" id="inputMembers" placeholder="Enter the number of members" [(ngModel)]="numberOfMembers" required> 
+          </div><br><br>
+  
+          <!-- Reserve Now button -->
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Reserve Trip</button>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+  
