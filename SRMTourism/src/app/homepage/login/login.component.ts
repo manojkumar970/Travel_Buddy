@@ -33,10 +33,10 @@ export class LoginComponent {
       };
       console.log(bodyData)
       this.apiService.loginUser(bodyData).subscribe(data=>{
-        console.log(data)
+        console.log(data.username)
         if(data.role=="USER"){
           sessionStorage.setItem('access_token', data.jwtToken)
-          this.router.navigate(['/user']);
+          this.router.navigate(['/user'],{ queryParams: { userId: data.username }});
         }
         else if(data.role=="ADMIN"){
           sessionStorage.setItem('access_token', data.jwtToken)

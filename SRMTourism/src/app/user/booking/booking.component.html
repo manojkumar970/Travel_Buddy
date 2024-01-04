@@ -6,38 +6,27 @@
         <form (ngSubmit)="reserveNow()">
           <!-- Name input -->
           <div class="form-group">
-            <label for="inputName">Name</label>
-            <input type="text" class="form-control" id="inputName" placeholder="Enter your name" [(ngModel)]="name" required>
-          </div>
-  
-          <!-- Email input -->
-          <div class="form-group">
-            <label for="inputEmail">Email</label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email" [(ngModel)]="email" required>
+            <label for="travellerName">Traveller Name</label>
+            <input type="text" class="form-control" id="travellerName" placeholder="Enter your name" [(ngModel)]="travellerName" required>
           </div>
   
           <!-- Phone number input -->
           <div class="form-group">
-            <label for="inputPhone">Phone Number</label>
-            <input type="tel" class="form-control" id="inputPhone" placeholder="Enter your phone number" [(ngModel)]="phone" required>
+            <label for="travellerMobile">Phone Number</label>
+            <input type="tel" class="form-control" id="travellerMobile" placeholder="Enter your phone number" [(ngModel)]="travellerMobile" required>
           </div>
-  
-          <!-- Address input -->
-          <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <textarea class="form-control" id="inputAddress" placeholder="Enter your address" [(ngModel)]="address" required></textarea>
-          </div>
+
   
           <!-- Start date input -->
           <div class="form-group">
-            <label for="inputStartDate">Start Date of the Trip</label>
-            <input type="date" class="form-control" id="inputStartDate" [(ngModel)]="startDate" required>
+            <label for="tourStartDate">Start Date of the Trip</label>
+            <input type="date" class="form-control" id="tourStartDate" [(ngModel)]="tourStartDate" required>
           </div>
 <!--   
           Number of members input  -->
           <div class="form-group">
-            <label for="inputMembers">Number of Members</label>
-            <input type="number" class="form-control" id="inputMembers" placeholder="Enter the number of members" [(ngModel)]="numberOfMembers" required> 
+            <label for="totalMember">Number of Members</label>
+            <input type="number" class="form-control" id="totalMember" placeholder="Enter the number of members" [(ngModel)]="totalMember" required> 
           </div><br><br>
   
           <!-- Reserve Now button -->

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-booking',
@@ -7,26 +8,47 @@ import { Router } from '@angular/router';
   styleUrls: ['./booking.component.css']
 })
 export class BookingComponent {
-  constructor(private router:Router){}
-  name: string = '';
-  email: string = '';
-  phone: string = '';
-  address: string = '';
-  startDate: string = '';
-  numberOfMembers: number | undefined; // Set the default value for "Number of Members"
+
+  userId: any;
+  packageId: any;
+  travellerName: any;
+  travellerMobile: any;
+  tourStartDate: any;
+  totalMember: any;
+
+
+  constructor(private router: Router, private apiService: ApiService, private route: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.packageId = params['id'];
+      this.userId = params['uId'];
+    });
+  }
+
 
   reserveNow() {
-    // Handle the reservation logic here
-    console.log('Reservation details:', {
-      name: this.name,
-      email: this.email,
-      phone: this.phone,
-      address: this.address,
-      startDate: this.startDate,
-      numberOfMembers: this.numberOfMembers
-    });
-    this.router.navigate(['/payment'])
+    const bodyData = {
+      travellerName: this.travellerName,
+      travellerMobile: this.travellerMobile,
+      tourStartDate: this.tourStartDate,
+      totalMember: this.totalMember,
+      user :this.userId,
+      packages :this.packageId
 
+    };
+
+    this.apiService.bookPackage(bodyData).subscribe((resultData: any) => {
+      console.log(resultData)
+      if (resultData) {
+        alert("Booking Package Successfully");
+      }
+      else {
+        alert("Package not Book");
+      };
+      this.router.navigate(['/payment']);
+
+    })
   }
 
 }

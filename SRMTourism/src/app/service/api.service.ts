@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +46,11 @@ addPackage(tourPackage: any): Observable < any > {
 
 getAllUsers(): Observable < any > {
   return this.http.get<any>(`${this.baseUrl}/getAllUser`,this.getHttpOptions());
+}
+
+bookPackage(bookingData:any) {
+  console.log(bookingData)
+  return this.http.post(`${this.baseUrl}/addBooking`,bookingData,this.getHttpOptions());
 }
 
 }
