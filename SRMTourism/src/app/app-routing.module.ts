@@ -18,6 +18,8 @@ import { AdminViewAllPackagesComponent } from './admin/admin-view-all-packages/a
 import { EditPackageComponent } from './admin/edit-package/edit-package.component';
 import { ForgetpwdComponent } from './homepage/forgetpwd/forgetpwd.component';
 import { PaymentComponent } from './user/payment/payment.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { SettingsComponent } from './user/settings/settings.component';
 
 const routes: Routes = [
   { path: 'home', component: HomepageComponent },
@@ -45,7 +47,13 @@ const routes: Routes = [
   { path: 'edit-package', component: EditPackageComponent },
   { path: 'forgetpwd', component: ForgetpwdComponent },
   { path: 'payment',component:PaymentComponent},
+<<<<<<< HEAD
+  { path: 'profile', component: ProfileComponent },
+  { path: 'settings',component:SettingsComponent},
+
+=======
   {path:"**", redirectTo:"home"},
+>>>>>>> 1599cc1dbfddb11dfda2ea93a2990911f3782b15
   
 ];
 

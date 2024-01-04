@@ -34,6 +34,11 @@ export class UserComponent {
     sessionStorage.removeItem("access_token")
     this.router.navigate(['/login']);
   }
+  isMenuOpen: boolean = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 
 
   bookItem(item: any) {
