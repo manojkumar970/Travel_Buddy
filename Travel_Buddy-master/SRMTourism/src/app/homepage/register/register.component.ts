@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from 'src/app/service/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,7 @@ export class RegisterComponent implements OnInit {
 
   registrationForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private apiService:ApiService) { }
+  constructor(private route:Router, private fb: FormBuilder, private http: HttpClient, private apiService:ApiService) { }
 
   ngOnInit() {
     this.initializeForm();
@@ -34,6 +35,7 @@ export class RegisterComponent implements OnInit {
       console.log(user);
       this.apiService.register(user).subscribe((resultData: any) => {
         alert("Employee Registered Successfully");
+        this.route.navigate(['login'])
        })
       }
       else{

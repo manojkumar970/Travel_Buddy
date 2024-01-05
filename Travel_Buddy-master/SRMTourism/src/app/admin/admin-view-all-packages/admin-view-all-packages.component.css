@@ -29,5 +29,20 @@
     align-items: center;
     margin-top: 10px;
   }
+
+
+  .book-left{
+    float: right;
+  }
+  .btn-left{
+    margin-right: 8px;
+    margin-left: 6px;
+  }
   
-  
+
+  h6 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    display: inline-block;
+    margin-right: 10px;
+}

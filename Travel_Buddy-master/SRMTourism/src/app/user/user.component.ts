@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../service/api.service';
 
 @Component({
@@ -7,19 +7,25 @@ import { ApiService } from '../service/api.service';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent {
+export class UserComponent implements OnInit{
 
   items:any;
+  userId:any;
 
-  constructor(private router: Router, private apiService: ApiService) {
-    apiService.getAllPackages().subscribe((resultData) => {
+  constructor(private router: Router, private apiService: ApiService,private route:ActivatedRoute) {
+    this.route.queryParams.subscribe(params => {
+      this.userId = params['userId'];
+    });
+
+  }
+
+  ngOnInit(): void {
+    
+    this.apiService.getAllPackages().subscribe((resultData) => {
       console.log("resultdata"+resultData);
       this.items=resultData;
-
       console.log(resultData)
     })
-
-
   }
 
   logout() {
@@ -30,10 +36,15 @@ export class UserComponent {
     this.router.navigate(['/login']);
   }
 
+  isMenuOpen: boolean = false;
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
 
   bookItem(item: any) {
     // Add logic to handle booking for the selected item
-    this.router.navigate(['/booking'])
+    this.router.navigate(['/booking'],{ queryParams: { id: item.id , uId :this.userId}})
     console.log('Booking item:', item.name);
   }
 

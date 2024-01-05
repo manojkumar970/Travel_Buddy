@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/service/api.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { ApiService } from 'src/app/service/api.service';
 export class AdminAddLocationPackageComponent {
   tripForm !: FormGroup;
 
-  constructor(private formBuilder: FormBuilder,private apiService:ApiService) {
+  constructor(private route:Router ,private formBuilder: FormBuilder,private apiService:ApiService) {
     this.tripForm = this.formBuilder.group({
       location: ['', Validators.required],
       description: ['', Validators.required],
@@ -25,6 +26,7 @@ export class AdminAddLocationPackageComponent {
    console.log(packageData);
     this.apiService.addPackage(packageData).subscribe((data)=>{
       console.log(data);
+      this.route.navigate(['admin-view-all-packages'])
       alert("Package added Successfully");
     })
   }

@@ -24,29 +24,51 @@ const routes: Routes = [
   { path: 'about', component: AboutUsComponent },
   { path: 'contact', component: ContactUsComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'admin', component:AdminComponent,
-  canActivate:[AuthGuardGuard]},
-  { path: 'user', component:UserComponent,
-    canActivate:[AuthGuardGuard]},
-  { path: 'admin-add-location', component:AdminAddLocationPackageComponent,
-  canActivate:[AuthGuardGuard]},
-  { path: 'admin-view-reservation',component:AdminViewReservationComponent,
-  canActivate:[AuthGuardGuard]},
-  { path: 'admin-view-users',component:AdminViewUsersComponent,
-  canActivate:[AuthGuardGuard]},
-  { path: 'login',component: LoginComponent},
-  { path: 'history',component:HistoryComponent,
-  canActivate:[AuthGuardGuard]},
-  { path: 'booking',component:BookingComponent,
-  canActivate:[AuthGuardGuard]},
-  { path: 'history',component:HistoryComponent},
-  { path: 'booking',component:BookingComponent},
-  { path: 'admin-view-all-packages',component:AdminViewAllPackagesComponent},
-  { path: 'edit-package', component: EditPackageComponent },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'admin', component: AdminComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'user', component: UserComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'admin-add-location', component: AdminAddLocationPackageComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'admin-view-reservation', component: AdminViewReservationComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'admin-view-users', component: AdminViewUsersComponent,
+    canActivate: [AuthGuardGuard]
+  },
+
+  {
+    path: 'history/:username', component: HistoryComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'booking', component: BookingComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'admin-view-all-packages', component: AdminViewAllPackagesComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'edit-package/:id', component: EditPackageComponent,
+    canActivate: [AuthGuardGuard]
+  },
   { path: 'forgetpwd', component: ForgetpwdComponent },
-  { path: 'payment',component:PaymentComponent},
-  {path:"**", redirectTo:"home"},
-  
+  {
+    path: 'payment', component: PaymentComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  { path: "**", redirectTo: "home" },
+
 ];
 
 @NgModule({

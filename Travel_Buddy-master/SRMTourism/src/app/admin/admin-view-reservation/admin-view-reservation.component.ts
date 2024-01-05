@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-admin-view-reservation',
@@ -6,19 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-view-reservation.component.css']
 })
 export class AdminViewReservationComponent {
-  // reservations: any[] = [];
+  userBookings:any;
 
-  // constructor(private adminService: AdminService) {}
-
-  // ngOnInit(): void {
-  //   this.adminService.getReservations().subscribe(
-  //     (      data: any[]) => {
-  //       this.reservations = data;
-  //     },
-  //     (      error: any): void => {
-  //       console.error('Error fetching reservations:', error);
-  //     }
-  //   );
-  // }
+  constructor(private router: Router, private apiService: ApiService) {
+   
+  }
+  ngOnInit(): void {
+    this.apiService.getAllBooking().subscribe((resultData:any) => {
+      console.log(resultData);
+      this.userBookings=resultData;
+      console.log(resultData)
+    })
+  }
 
 }
