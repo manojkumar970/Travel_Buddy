@@ -15,9 +15,11 @@ import { BookingComponent } from './user/booking/booking.component';
 
 import { AuthGuardGuard } from './guards/auth-guard.guard';
 import { AdminViewAllPackagesComponent } from './admin/admin-view-all-packages/admin-view-all-packages.component';
-import { EditPackageComponent } from './admin/edit-package/edit-package.component';
 import { ForgetpwdComponent } from './homepage/forgetpwd/forgetpwd.component';
 import { PaymentComponent } from './user/payment/payment.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { SettingsComponent } from './user/settings/settings.component';
+import { AdminprofileComponent } from './admin/adminprofile/adminprofile.component';
 
 const routes: Routes = [
   { path: 'home', component: HomepageComponent },
@@ -42,9 +44,11 @@ const routes: Routes = [
   { path: 'history',component:HistoryComponent},
   { path: 'booking',component:BookingComponent},
   { path: 'admin-view-all-packages',component:AdminViewAllPackagesComponent},
-  { path: 'edit-package', component: EditPackageComponent },
   { path: 'forgetpwd', component: ForgetpwdComponent },
   { path: 'payment',component:PaymentComponent},
+  {path:'profile',component:ProfileComponent},
+  {path:'settings',component:SettingsComponent},
+  {path:'adminprofile',component:AdminprofileComponent},
   {path:"**", redirectTo:"home"},
   
 ];

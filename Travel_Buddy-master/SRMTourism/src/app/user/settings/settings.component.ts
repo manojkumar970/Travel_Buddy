@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/service/api.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-settings',
+  templateUrl: './settings.component.html',
+  styleUrls: ['./settings.component.css']
 })
-export class RegisterComponent implements OnInit {
-
+export class SettingsComponent {
   registrationForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private apiService:ApiService) { }
+  constructor(private router:Router,private fb: FormBuilder, private http: HttpClient, private apiService:ApiService) { }
 
   ngOnInit() {
     this.initializeForm();
@@ -33,15 +33,14 @@ export class RegisterComponent implements OnInit {
     if(this.registrationForm.valid) {
       console.log(user);
       this.apiService.register(user).subscribe((resultData: any) => {
-        alert("User Registered Successfully");
+        alert("Employee Registered Successfully");
        })
       }
       else{
-        alert("User not Registered");
+        alert("Employee not Registered");
       }; 
+      this.router.navigate(['/profile'])
    
   }
-
-
 
 }

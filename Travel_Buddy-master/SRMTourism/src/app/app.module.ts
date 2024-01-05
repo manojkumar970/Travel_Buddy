@@ -18,9 +18,11 @@ import { HistoryComponent } from './user/history/history.component';
 import { BookingComponent } from './user/booking/booking.component';
 import { TypingAnimationDirective } from './typing-animation.directive';
 import { AdminViewAllPackagesComponent } from './admin/admin-view-all-packages/admin-view-all-packages.component';
-import { EditPackageComponent } from './admin/edit-package/edit-package.component';
 import { ForgetpwdComponent } from './homepage/forgetpwd/forgetpwd.component';
 import { PaymentComponent } from './user/payment/payment.component';
+import { SettingsComponent } from './user/settings/settings.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { AdminprofileComponent } from './admin/adminprofile/adminprofile.component';
 
 enableProdMode();
 
@@ -41,9 +43,11 @@ enableProdMode();
     BookingComponent,
     TypingAnimationDirective,
     AdminViewAllPackagesComponent,
-    EditPackageComponent,
     ForgetpwdComponent,
     PaymentComponent,
+    SettingsComponent,
+    ProfileComponent,
+    AdminprofileComponent,
    
   ],
   imports: [

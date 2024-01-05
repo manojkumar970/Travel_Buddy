@@ -1,32 +1,16 @@
-<div class="user">
-  <!-- navbar.component.html -->
-
-  <div class="navbar">
-    <div class="navbar-left">
-      <a routerLink="/booking">Booking</a>
-      <a routerLink="/history">History</a>
-      <a routerLink="/contact">Contact Us</a>
-    </div>
-    <div class="navbar-right">
-      <a (click)="logout()">Logout</a>
-    </div>
-  </div>
-  <!-- user.component.html -->
-
-  <div class="user-container">
-    <div class="item" *ngFor="let item of items">
-    <img src={{item.img}} alt="item.img" />
-      <div class="item-content">
-        <h2>{{item.location | uppercase}}</h2>
-        <p>{{item.description}}</p>
-
-        <div class="booking-options">
-          <p>Price: {{ item.price | currency:"INR":"symbol" }}</p>
-          <button (click)="bookItem(item)">Book Now</button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
+<div class="hero">
+  <nav>
+    <p class="logo">User Dashboard</p>
+    <ul>
+      <li><a href="/home">Home</a></li>
+      <li><a href="/booking">Booking</a></li>
+      <li><a href="/history">History</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/login">Logout</a></li>
+    </ul>
+    <p (click)="profile()"><img src="assets/images/profile-img.png" class="user-pic" ></p>
+   
+  </nav>
+ 
 </div>

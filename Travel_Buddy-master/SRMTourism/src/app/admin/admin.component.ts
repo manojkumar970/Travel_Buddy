@@ -35,5 +35,9 @@ viewUsers() {
   console.log('View Users clicked');
   // Add your logic for viewing users here
 }
+editPackages(){
+  this.router.navigate(['/edit-package'])
+  console.log('edit-package')
+}
 
 }

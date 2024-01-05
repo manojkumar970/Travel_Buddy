@@ -10,18 +10,18 @@ import { ApiService } from '../service/api.service';
 export class UserComponent {
 
   items:any;
-
+ 
   constructor(private router: Router, private apiService: ApiService) {
     apiService.getAllPackages().subscribe((resultData) => {
       console.log("resultdata"+resultData);
       this.items=resultData;
-
+ 
       console.log(resultData)
     })
-
-
+ 
+ 
   }
-
+ 
   logout() {
     // Add logic for logout (e.g., clear user session)
     console.log('Logout clicked');
@@ -29,12 +29,16 @@ export class UserComponent {
     // Redirect to the login page or another desired page
     this.router.navigate(['/login']);
   }
-
-
+ 
   bookItem(item: any) {
     // Add logic to handle booking for the selected item
     this.router.navigate(['/booking'])
     console.log('Booking item:', item.name);
+  }
+  
+  profile(){
+    this.router.navigate(['/profile']);
+    console.log("moving to the profile page")
   }
 
 }
