@@ -27,7 +27,7 @@ export class UserComponent implements OnInit{
       console.log(resultData)
     })
   }
-
+ 
   logout() {
     // Add logic for logout (e.g., clear user session)
     console.log('Logout clicked');
@@ -46,6 +46,11 @@ export class UserComponent implements OnInit{
     // Add logic to handle booking for the selected item
     this.router.navigate(['/booking'],{ queryParams: { id: item.id , uId :this.userId}})
     console.log('Booking item:', item.name);
+  }
+  
+  profile(){
+    this.router.navigate(['/profile']);
+    console.log("moving to the profile page")
   }
 
 }

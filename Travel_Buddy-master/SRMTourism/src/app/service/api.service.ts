@@ -8,10 +8,12 @@ import { Observable } from 'rxjs';
 export class ApiService {
 
   private httpHeaders: any;
-
+  access_token = ""
 
   constructor(private http: HttpClient) {
-    
+    this.access_token = sessionStorage.getItem("access_token") || "";
+    if(this.access_token)
+    this.updateCommonHeaders()
   }
 
   updateCommonHeaders(){

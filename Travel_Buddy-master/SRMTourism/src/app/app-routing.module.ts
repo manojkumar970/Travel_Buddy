@@ -15,9 +15,12 @@ import { BookingComponent } from './user/booking/booking.component';
 
 import { AuthGuardGuard } from './guards/auth-guard.guard';
 import { AdminViewAllPackagesComponent } from './admin/admin-view-all-packages/admin-view-all-packages.component';
-import { EditPackageComponent } from './admin/edit-package/edit-package.component';
 import { ForgetpwdComponent } from './homepage/forgetpwd/forgetpwd.component';
 import { PaymentComponent } from './user/payment/payment.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { SettingsComponent } from './user/settings/settings.component';
+import { AdminprofileComponent } from './admin/adminprofile/adminprofile.component';
+import { EditPackageComponent } from './admin/edit-package/edit-package.component';
 
 const routes: Routes = [
   { path: 'home', component: HomepageComponent },
@@ -67,6 +70,9 @@ const routes: Routes = [
     path: 'payment', component: PaymentComponent,
     canActivate: [AuthGuardGuard]
   },
+  {path:'profile',component:ProfileComponent,canActivate: [AuthGuardGuard]},
+  {path:'settings',component:SettingsComponent,canActivate: [AuthGuardGuard]},
+  {path:'adminprofile',component:AdminprofileComponent,canActivate: [AuthGuardGuard]},
   { path: "**", redirectTo: "home" },
 
 ];

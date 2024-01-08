@@ -2,7 +2,7 @@
     <h2 class="editpackage">Edit Package</h2>
     <!-- Add form fields to edit package details, including image -->
     <div class="adminform">
-      <form [formGroup]="updatePackage" (ngSubmit)="saveChanges(updatePackage.value)">
+      <form [formGroup]="updatePackage" >
         <div class="form-group">
           <label for="location">Name of Place</label>
           <input type="text" id="location" formControlName="location" class="form-control" required>
@@ -28,7 +28,7 @@
           <input type="text" id="img" formControlName="img" class="form-control" placeholder="Enter image url ">
         </div>
         <div class="text-center">
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary" (click)="saveChanges(updatePackage.value)">Submit</button>
         </div>
       
       </form>

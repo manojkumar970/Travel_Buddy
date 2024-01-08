@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit {
        })
       }
       else{
-        alert("Employee not Registered");
+        alert("User not Registered");
       }; 
    
   }

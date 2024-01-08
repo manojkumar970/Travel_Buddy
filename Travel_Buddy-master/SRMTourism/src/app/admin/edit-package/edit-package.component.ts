@@ -11,7 +11,7 @@ import { ApiService } from 'src/app/service/api.service';
 export class EditPackageComponent implements OnInit{
 
 package: any;
-updatePackage: FormGroup;
+updatePackage!: FormGroup;
 packageId:any;
 
 constructor(
@@ -47,6 +47,7 @@ constructor(
           price:res.price,
           day:res.day
         })
+        console.log(this.updatePackage.value)
       }
     })
   }

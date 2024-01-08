@@ -6,8 +6,8 @@ body {
   }
 
   .nav-bar {
-    background-color:lightseagreen; /* Navbar background color */
-    color:black; /* Text color */
+    background-color:black; /* Navbar background color */
+    color:white; /* Text color */
     padding: 20px 0; /* Padding */
   }
 

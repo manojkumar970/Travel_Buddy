@@ -2,19 +2,18 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-adminprofile',
+  templateUrl: './adminprofile.component.html',
+  styleUrls: ['./adminprofile.component.css']
 })
-export class ProfileComponent {
+export class AdminprofileComponent {
   userData = {
-    name: "Rasheed Khan",
-    email: "Rasheed768@gmail.com",
-    phone: "9866433295",
-    address: "Hyderabad",
+    name: "John Doe",
+    email: "Johndoe68@gmail.com",
+    phone: "9866489795",
+    address: "Delhi",
     gender: "Male"
   };
-  
   constructor(private router:Router){}
   ngOnInit(){}
   changepassword(){
